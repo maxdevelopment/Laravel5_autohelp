@@ -16,7 +16,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('login')->unique();
             $table->string('password', 60);
+            $table->boolean('isAdmin');
+            $table->boolean('isActive');
             $table->rememberToken();
             $table->timestamps();
         });
