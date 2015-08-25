@@ -10,6 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+Route::post('auth', 'CustomAuth@postLogin');
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
 Route::controller('master', 'AdminController');
 Route::controller('/', 'MainController');
 
