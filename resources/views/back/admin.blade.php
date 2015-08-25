@@ -8,7 +8,7 @@
 <body>
 
 AdminPage
-
+{!! HTML::linkRoute('logout', 'logout') !!}
 
 </body>
 </html>
