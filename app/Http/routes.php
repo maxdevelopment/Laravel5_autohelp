@@ -11,10 +11,8 @@
 |
 */
 
+Route::post('help', 'HelpController@postHelp');
 Route::post('auth', 'CustomAuth@postLogin');
-
-//Route::get('auth/login', 'Auth\AuthController@getLogin');
-//Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('auth/login', [
     'as' => 'login', 'uses' => 'Auth\AuthController@getLogin'

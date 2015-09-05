@@ -9,7 +9,7 @@
 
 @if($errors->has())
     @foreach ($errors->all() as $error)
-        ZZZ<div>{{ $error }}</div>
+        <div>{{ $error }}</div>
     @endforeach
 @endif
 
