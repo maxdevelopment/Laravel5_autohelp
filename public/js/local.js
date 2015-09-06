@@ -37,7 +37,8 @@ $(document).ready(function() {
             data[input.attr("name")] = input.val();
             delete data["undefined"];
         });
-
+        //data['_token'] = $('input[name=_token]').val();
+        //console.log(data);
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -45,10 +46,9 @@ $(document).ready(function() {
             success : function(callback){
                 if(typeof callback == 'object') {
                     $('#error').empty();
-                    if(callback.name) $('#error').append(callback.name);
+                    if(callback.name) $('#error').append(callback.name + '<br />');
                     if(callback.phone) $('#error').append(callback.phone);
                 } else {
-                    console.log('close modal window and send msg to owner');
                     ModalWindow();
                 }
             }

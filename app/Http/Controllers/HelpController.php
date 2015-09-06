@@ -1,14 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: raw
- * Date: 05.09.15
- * Time: 1:20
- */
 
 namespace app\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Config;
 
 
 class HelpController extends Controller {
@@ -23,6 +20,11 @@ class HelpController extends Controller {
 
         if ($validator->fails()) {
             return $validator->errors();
+        } else {
+            Mail::send('mail.adminmail', ['name' => Input::get('name'), 'phone' => Input::get('phone')], function($message)
+            {
+                $message->to(Config::get('addconfig.adminmail'))->subject(Config::get('addconfig.subject'));
+            });
         }
     }
 }
