@@ -1,12 +1,7 @@
 <?php
 
 namespace app\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Config;
-use GeoIP;
+use Validator, Input, Mail, Log, Config, GeoIP;
 
 class HelpController extends Controller {
     public function postHelp()
