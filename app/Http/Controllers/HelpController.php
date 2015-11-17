@@ -1,7 +1,7 @@
 <?php
 
-namespace app\Http\Controllers;
-use Validator, Input, Mail, Log, Config, GeoIP;
+namespace App\Http\Controllers;
+use Validator, Request, Mail, Log, Config, GeoIP;
 
 class HelpController extends Controller {
     public function postHelp()
@@ -16,12 +16,12 @@ class HelpController extends Controller {
             'phone' => 'required'
         );
 
-        $validator = Validator::make(Input::all(), $rules, $messages);
+        $validator = Validator::make(Request::all(), $rules, $messages);
 
         if ($validator->fails()) {
             return $validator->errors();
         } else {
-            Mail::send('mail.adminmail', ['name' => Input::get('name'), 'phone' => Input::get('phone')], function($message)
+            Mail::send('mail.adminmail', ['name' => Request::get('name'), 'phone' => Request::get('phone')], function($message)
             {
                 $message->to(Config::get('addconfig.adminmail'))->subject(Config::get('addconfig.subject'));
             });
