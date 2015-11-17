@@ -1,0 +1,16 @@
+{
+  "name": "AutoProblema",
+  "homepage": "https://github.com/maxdevelopment/Laravel5_autohelp",
+  "authors": [
+    "Max Naranovich <info@maxdev.by>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3",
+    "bootstrap-css-only": "3.1.1"
+  }
+}
