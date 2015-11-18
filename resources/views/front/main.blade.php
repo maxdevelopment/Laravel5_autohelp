@@ -13,13 +13,13 @@
     <link href="{{ asset('css/local.css') }}" rel="stylesheet" type="text/css" >
 
     <script src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
-    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-animate/angular-animate.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-messages/angular-messages.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
 </head>
 <body ng-controller="MainController">
 
-<mark>MainPage</mark>
-
-
+<button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
 
 <!-- AngularJS app-->
     <script src="{{ asset('js/app.js') }}"></script>

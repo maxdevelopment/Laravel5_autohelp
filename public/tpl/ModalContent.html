@@ -1,0 +1,42 @@
+<form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)">
+    <div class="modal-header">
+        <h3 class="modal-title">modal</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>name:</label>
+            <input ng-model="form_data.name"
+                   type="text"
+                   name="name"
+                   class="form-control"
+                   ng-minlength="3"
+                   ng-maxlength="20"
+                   required ng-pattern="/^(\D)+$/" placeholder="Ваше имя">
+            <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched || userForm.$submitted">
+                <p ng-message="minlength">минимальная длинна 3 символа</p>
+                <p ng-message="maxlength">максимальная длинна 20 символов</p>
+                <p ng-message="required">пожалуйста, укажите Ваше имя</p>
+                <p ng-message="pattern">только буквы</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>phone:</label>
+            <input ng-model="form_data.phone"
+                   type="text"
+                   name="phone"
+                   class="form-control"
+                   ng-minlength="5"
+                   ng-maxlength="20"
+                   required ng-pattern="/^[0-9+]+$/" placeholder="Ваш номер телефона">
+            <div ng-messages="userForm.phone.$error" ng-if="userForm.phone.$touched || userForm.$submitted">
+                <p ng-message="minlength">минимальная длинна 5 символов</p>
+                <p ng-message="maxlength">максимальная длинна 20 символов</p>
+                <p ng-message="required">пожалуйста, укажите Ваш номер телефона</p>
+                <p ng-message="pattern">только цифры</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" name="sndButton">Отправить</button>
+    </div>
+</form>
