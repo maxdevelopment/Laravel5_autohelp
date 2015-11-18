@@ -1,26 +1,47 @@
-var appAuto = angular.module('AutoHelp', ['ngAnimate', 'ngMessages', 'ui.bootstrap'],
+var appAuto = angular.module('AutoHelp', ['ngAnimate', 'ngMessages', 'ngResource', 'ui.bootstrap'],
     function($interpolateProvider) {
         $interpolateProvider.startSymbol('<%');
         $interpolateProvider.endSymbol('%>');
     }
 );
 
-appAuto.controller('MainController', ['$scope', '$uibModal', '$log', function($scope, $uibModal) {
+appAuto.factory('SiteText', ['$http', function($http) {
+    var TextService = {};
+    TextService.getText = function() {
+        var text = {};
+        $http.get('tpl/SiteText.json').then(function(resp) {
+            angular.forEach(resp.data, function(val, key) {
+                text[key] = val;
+            });
+        });
+        return text;
+    };
+    return TextService;
+}]);
+
+appAuto.factory('ApiRequest', ['$resource', function($resource) {
+    return $resource('/help', {}, {
+        'SendMsg' : {method: 'POST', isArray: false}
+    });
+}]);
+
+appAuto.controller('MainController', ['$scope', '$uibModal', 'SiteText', function($scope, $uibModal, SiteText) {
+    $scope.txt = SiteText.getText();
+
     $scope.open = function () {
         $uibModal.open({
             animation: true,
             templateUrl: 'tpl/ModalContent.html',
-            controller: 'ModalInstanceCtrl'
+            controller: 'ModalInstanceController'
         });
     };
 }]);
 
-appAuto.controller('ModalInstanceCtrl', function ($scope, $uibModal, $uibModalInstance, $log) {
+appAuto.controller('ModalInstanceController', function ($scope, $uibModal, $uibModalInstance, ApiRequest) {
     $scope.form_data = {};
     $scope.submitForm = function(isValid) {
         if (isValid) {
-            $log.info('send to the factory');
-            $log.info($scope.form_data);
+            ApiRequest.SendMsg($scope.form_data);
             $uibModalInstance.close($uibModal.open({
                 animation: true,
                 templateUrl: 'tpl/ModalThanks.html'

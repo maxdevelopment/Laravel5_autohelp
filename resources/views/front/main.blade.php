@@ -15,11 +15,15 @@
     <script src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
     <script src="{{ asset('bower_components/angular-animate/angular-animate.min.js') }}"></script>
     <script src="{{ asset('bower_components/angular-messages/angular-messages.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-resource/angular-resource.min.js') }}"></script>
     <script src="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
 </head>
 <body ng-controller="MainController">
 
 <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+
+<% txt.test1 %>
+<% txt.test2 %>
 
 <!-- AngularJS app-->
     <script src="{{ asset('js/app.js') }}"></script>
