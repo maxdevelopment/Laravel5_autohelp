@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Message;
 use Validator, Request, Mail, Log, Config, GeoIP;
 
 class HelpController extends Controller {
@@ -31,6 +32,8 @@ class HelpController extends Controller {
                 'phone' => Request::get('phone'),
                 'location' => $location_str
             ];
+
+            Message::create($mailInfo);
 
             Mail::send('mail.adminmail', $mailInfo, function($message)
             {
