@@ -1,5 +1,7 @@
 <?php
-
+namespace App\Http;
+use App\Message;
+use Response, Request, Route;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -21,6 +23,20 @@ Route::get('auth/login', [
 Route::get('auth/logout', [
     'as' => 'logout', 'uses' => 'Auth\AuthController@getLogout'
 ]);
+
+Route::get('list', ['middleware' => 'auth', function()
+{
+    $messages = Message::all();
+    return Response::json($messages);
+}]);
+
+Route::post('list', ['middleware' => 'auth', function()
+{
+    $message = Message::find(Request::get('id'));
+    $message->note = Request::get('note');
+    $message->save();
+    return Response::json($message);
+}]);
 
 Route::controller('master', 'AdminController');
 Route::controller('/', 'MainController');
