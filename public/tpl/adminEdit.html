@@ -6,12 +6,12 @@
 
                 <div ng-show="view">
                     <textarea class="form-control" ng-model="update.text" ng-init="update.text = note"></textarea>
-                    <button ng-click="updateNote(info['id'], update.text)">update</button>
+                    <button class="btn btn-success btn-sm" ng-click="updateNote(info['id'], update.text)">update</button>
                 </div>
 
                 <div ng-show="!view">
                     <p><% info['note'] %></p>
-                    <button ng-click="editNote()">edit</button>
+                    <button class="btn btn-warning btn-sm" ng-click="editNote()">edit</button>
                 </div>
             </small>
         </td>

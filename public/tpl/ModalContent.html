@@ -1,9 +1,10 @@
 <form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)">
     <div class="modal-header">
-        <h3 class="modal-title">modal</h3>
+        <h3 class="modal-title">AutoProblema.by</h3>
     </div>
     <div class="modal-body">
         <div class="form-group">
+            <label>Ваше имя:</label>
             <input ng-model="form_data.name"
                    type="text"
                    name="name"
@@ -12,14 +13,14 @@
                    ng-maxlength="20"
                    required ng-pattern="/^(\D)+$/" placeholder="Ваше имя">
             <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched || userForm.$submitted">
-                <p ng-message="minlength">минимальная длинна 3 символа</p>
-                <p ng-message="maxlength">максимальная длинна 20 символов</p>
-                <p ng-message="required">пожалуйста, укажите Ваше имя</p>
-                <p ng-message="pattern">только буквы</p>
+                <p class="bg-warning" ng-message="minlength">минимальная длинна 3 символа</p>
+                <p class="bg-warning" ng-message="maxlength">максимальная длинна 20 символов</p>
+                <p class="bg-warning" ng-message="required">пожалуйста, укажите Ваше имя</p>
+                <p class="bg-warning" ng-message="pattern">только буквы</p>
             </div>
         </div>
         <div class="form-group">
-            <label>phone:</label>
+            <label>Ваш номер телефона:</label>
             <input ng-model="form_data.phone"
                    type="text"
                    name="phone"
@@ -28,14 +29,16 @@
                    ng-maxlength="20"
                    required ng-pattern="/^[0-9+]+$/" placeholder="Ваш номер телефона">
             <div ng-messages="userForm.phone.$error" ng-if="userForm.phone.$touched || userForm.$submitted">
-                <p ng-message="minlength">минимальная длинна 5 символов</p>
-                <p ng-message="maxlength">максимальная длинна 20 символов</p>
-                <p ng-message="required">пожалуйста, укажите Ваш номер телефона</p>
-                <p ng-message="pattern">только цифры</p>
+                <p class="bg-warning" ng-message="minlength">минимальная длинна 5 символов</p>
+                <p class="bg-warning" ng-message="maxlength">максимальная длинна 20 символов</p>
+                <p class="bg-warning" ng-message="required">пожалуйста, укажите Ваш номер телефона</p>
+                <p class="bg-warning" ng-message="pattern">только цифры</p>
             </div>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="submit" name="sndButton">Отправить</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info btn-lg" name="sndButton">Отправить</button>
+        </div>
     </div>
 </form>

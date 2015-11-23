@@ -1,0 +1,40 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    background: url("../img/rain.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: rgba(255, 255, 255, 1.0);
+    padding-top: 10px;
+    font-size: 15px;
+    outline:none !important;
+}
+.custom_block {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+.custom_quote {
+    border-left: 2px solid #eee;
+    margin: 20px;
+}
+.list-unstyled {
+    padding-left: 10px;
+}
+.footer {
+    padding-top: 10px;
+    font-size: 13px;
+}
+.footer > a, .footer > a:hover, .footer > a:focus {
+    color: rgba(255, 255, 255, 1.0);
+    outline:none !important;
+}
+.modal-content {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+.modal-footer {
+    text-align: center;
+}

@@ -49,3 +49,22 @@ appAuto.controller('ModalInstanceController', function ($scope, $uibModal, $uibM
         }
     };
 });
+
+appAuto.directive('serviceLeft', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'tpl/serviceLeft.html'
+    };
+});
+appAuto.directive('serviceRight', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'tpl/serviceRight.html'
+    };
+});
+appAuto.directive('serviceBottom', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'tpl/serviceBottom.html'
+    };
+});

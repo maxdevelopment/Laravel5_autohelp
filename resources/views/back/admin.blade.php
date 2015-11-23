@@ -18,8 +18,12 @@
 </head>
 <body ng-controller="AdminController">
 
-AdminPage
-{!! HTML::linkRoute('logout', 'logout') !!}
+<ul class="list-inline">
+    <li>
+        <h3>Admin Page</h3>
+    </li>
+    <li>{!! HTML::linkRoute('logout', 'logout', array(), array('class' => 'btn btn-default btn-sm')) !!}</li>
+</ul>
 
 
 <div ng-repeat="customer in customers">

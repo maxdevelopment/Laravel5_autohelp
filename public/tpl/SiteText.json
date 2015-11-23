@@ -1,4 +1,10 @@
 {
-  "test1": "first phrase",
-  "test2": "second phrase"
+  "jumbotronTitle": "AutoProblema.by",
+  "jumbotronMsg": "Любую автопроблему можно решить. И мы знаем как это сделать.",
+  "jumbotronBtn": "Связаться с нами",
+  "quoteLeft": "Поможем Вам купить",
+  "quoteLeftText": "с нами Вас не обманут",
+  "quoteRight": "Поможем при ДТП",
+  "quoteRightText": "получим максимальную старховку",
+  "footerText" : "2015, MaxDev.by"
 }
