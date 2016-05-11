@@ -37,9 +37,9 @@ class HelpController extends Controller {
 
             Mail::send('mail.adminmail', $mailInfo, function($message)
             {
-                $message->to(Config::get('addconfig.adminmail'))->subject(Config::get('addconfig.subject'));
+		$message->from(Config::get('addconfig.adminmail'));
+                $message->to(Config::get('addconfig.tomail'))->subject(Config::get('addconfig.subject'));
             });
-            //Log::info('Mail', $mailInfo);
         }
     }
 }

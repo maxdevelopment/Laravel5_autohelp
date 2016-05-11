@@ -1,5 +1,6 @@
 <?php
 return array(
-    'adminmail' => 'admin@work.local',
-    'subject' => 'New customer'
+    'adminmail' => 'info@autoproblema.by',
+    'tomail'	=> 'gtamadmax@gmail.com',
+    'subject' => 'autoproblema.by'
 );

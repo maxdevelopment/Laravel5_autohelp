@@ -3,7 +3,7 @@
 /storage
 /bootstrap
 /.idea
-composer.lock
+/composer.lock
 Homestead.yaml
 .env
 _ide_helper.php
